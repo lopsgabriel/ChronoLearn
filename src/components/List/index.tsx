@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles.scss'
+import style from './List.module.scss';
 interface Task {
   task_name: string;
   time: string;
@@ -11,7 +11,7 @@ interface ListProps {
 
 function List({tasks}: ListProps) {
   return (
-    <aside className='listaTarefas'>
+    <aside className={style.listaTarefas}>
       <h2>Estudos do dia</h2>
       <ul>
         {tasks.map((item, index) => (
