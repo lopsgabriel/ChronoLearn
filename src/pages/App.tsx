@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Form from '../components/Form';
 import List from '../components/List';
 import style from './App.module.scss'
+import { Stopwatch } from '../components/Stopwatch';
 
 interface Task {
   task_name: string,
@@ -14,6 +15,7 @@ function App() {
     <div className={style.AppStyle}>
       <Form tasks={tasks} setTasks={setTasks} />
       <List tasks={tasks} />
+      <Stopwatch />
     </div>
   );
 }
