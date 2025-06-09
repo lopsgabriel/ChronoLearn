@@ -1,11 +1,15 @@
-import React from 'react';
+import { useState } from 'react';
+import './styles.scss';
 
-class Button extends React.Component {
-  render() {
-    return (
-      <button>Button</button>
-    )
-  }
+export default function Button() {
+  const [ativo, setAtivo] = useState(false)
+  return (
+    <button
+      onMouseEnter={() => setAtivo(true)}
+      onMouseLeave={() => setAtivo(false)}
+      className='botao'
+    >
+      Button
+    </button>
+  )
 }
-
-export default Button

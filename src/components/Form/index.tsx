@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Button from "../Button";
-
+import './styles.scss';
 type Task = {
   task_name: string;
   time: string;
@@ -26,8 +26,8 @@ export default function TaskForm({tasks, setTasks }: TaskFormProps) {
     return
   }
   return (
-  <form onSubmit={handleAddTask}>
-    <div>
+  <form onSubmit={handleAddTask} className='novaTarefa'>
+    <div className='inputContainer'>
       <label htmlFor="tarefa">
         Adicione um novo Estudo
       </label>
@@ -41,7 +41,7 @@ export default function TaskForm({tasks, setTasks }: TaskFormProps) {
       required
       />
     </div>
-    <div>
+    <div className='inputContainer'>
       <label htmlFor="tempo">
         Tempo
       </label>

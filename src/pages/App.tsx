@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import Form from './components/Form';
-import List from './components/List';
+import Form from '../components/Form';
+import List from '../components/List';
+import './style.scss'
 
 interface Task {
   task_name: string,
@@ -9,10 +10,8 @@ interface Task {
 
 function App() {
    const [tasks, setTasks] = useState<Task[]>([])
-
-
   return (
-    <div className="App">
+    <div className="AppStyle">
       <Form tasks={tasks} setTasks={setTasks} />
       <List tasks={tasks} />
     </div>
