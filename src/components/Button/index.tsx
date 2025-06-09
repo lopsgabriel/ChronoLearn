@@ -1,6 +1,11 @@
 import { useState } from 'react';
 import style from './Button.module.scss';
-export default function Button() {
+
+interface ButtonProps {
+  texto: string
+}
+
+export default function Button(texto: ButtonProps) {
   const [ativo, setAtivo] = useState(false)
   return (
     <button
@@ -8,7 +13,7 @@ export default function Button() {
       onMouseLeave={() => setAtivo(false)}
       className={style.botao}
     >
-      Button
+      {texto.texto}
     </button>
   )
 }

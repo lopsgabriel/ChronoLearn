@@ -57,7 +57,8 @@ export default function TaskForm({tasks, setTasks }: TaskFormProps) {
       required
         />
     </div>
-    <Button />
+    <Button
+    texto = "Adicionar" />
   </form>
   )
 }
