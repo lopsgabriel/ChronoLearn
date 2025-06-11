@@ -3,11 +3,8 @@ import Form from '../components/Form';
 import List from '../components/List';
 import style from './App.module.scss'
 import { Stopwatch } from '../components/Stopwatch';
+import Task from '../components/interfaces/Task';
 
-interface Task {
-  task_name: string,
-  time: string
-}
 
 function App() {
    const [tasks, setTasks] = useState<Task[]>([])
