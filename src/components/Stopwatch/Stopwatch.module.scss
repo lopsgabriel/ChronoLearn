@@ -22,6 +22,12 @@
     font-size: 2rem;
   }
 
+  .buttons {
+    display: flex;
+    gap: 1rem;       // ajusta a distância entre os botões
+    margin-top: 1.5rem; // opcional: um espacinho acima do grupo
+  }
+
   button {
     background-color: #88bcd1;
     border-radius: 10px;

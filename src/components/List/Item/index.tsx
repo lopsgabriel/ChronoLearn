@@ -8,7 +8,7 @@ interface ItemProps {
 
 export default function Item({task, selectTask}: ItemProps) {
   return (
-    <li className={`${style.item} ${task.selected ? style.itemSelecionado : ''}`} onClick={() => selectTask(task)}>
+    <li className={`${style.item} ${task.selected ? style.itemSelecionado : ''} ${task.completed ? style.itemCompletado : ''}`} onClick={() => selectTask(task)}>
       <h3 >{task.task_name}</h3>
       <span>{task.time}</span>
     </li>
