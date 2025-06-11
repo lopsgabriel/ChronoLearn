@@ -1,8 +1,8 @@
 interface Task {
   task_name: string;
   time: string;
-  selecionado: boolean;
-  completado: boolean;
+  selected: boolean;
+  completed: boolean;
   id: string
 };
 
