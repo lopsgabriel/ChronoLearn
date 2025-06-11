@@ -19,14 +19,13 @@ function App() {
   }
 
   function finishTask(){
-    if(selected){
-      setSelected(undefined)
-      setTasks(prev => prev.map(task => ({
-        ...task,
-        selected: false,
-        completed: task.id === selected.id ? true : false
-      })))
-    }
+    if(!selected) return
+    setSelected(undefined)
+    setTasks(prev => prev.map(task =>
+      task.id === selected.id
+        ? { ...task, selected: false, completed: true }
+        : task
+    ))
   }
 
   return (
