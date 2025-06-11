@@ -1,10 +1,8 @@
 import { useState } from "react";
 import Button from "../Button";
 import style from './Form.module.scss';
-type Task = {
-  task_name: string;
-  time: string;
-};
+import Task from "../interfaces/Task";
+import { v4 as uuid} from "uuid"
 
 type TaskFormProps = {
   tasks: Task[];
@@ -18,7 +16,7 @@ export default function TaskForm({tasks, setTasks }: TaskFormProps) {
   const handleAddTask = (event: React.FormEvent) => {
     event.preventDefault()
     if(taskName && taskTime){
-      const newTask: Task = {task_name: taskName, time: taskTime};
+      const newTask: Task = {task_name: taskName, time: taskTime, selecionado: false, completado: false};
       setTasks((prev) => [...prev, newTask]);
       setTaskName('');
       setTaskTime('');
