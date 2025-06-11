@@ -7,11 +7,24 @@ import Task from '../components/interfaces/Task';
 
 
 function App() {
-   const [tasks, setTasks] = useState<Task[]>([])
+  const [tasks, setTasks] = useState<Task[]>([])
+  const [selected, setSelected] = useState<Task>()
+
+  function selectTask(selectedTask: Task) {
+    setSelected(selectedTask)
+    setTasks(prev => prev.map(task => ({
+      ...task,
+      selected: task.id === selectedTask.id ? true : false
+    })))
+  }
+
   return (
     <div className={style.AppStyle}>
       <Form tasks={tasks} setTasks={setTasks} />
-      <List tasks={tasks} />
+      <List
+        tasks={tasks}
+        selectTask={selectTask} 
+      />
       <Stopwatch />
     </div>
   );

@@ -1,11 +1,16 @@
 import style from './../List.module.scss';
 import Task from '../../interfaces/Task';
 
-export default function Item({task_name, time, selected, completed, id}: Task) {
+interface ItemProps {
+  task: Task,
+  selectTask: (task: Task) => void
+}
+
+export default function Item({task, selectTask}: ItemProps) {
   return (
-    <li className={style.item}>
-      <h3>{task_name}</h3>
-      <span>{time}</span>
+    <li className={`${style.item} ${task.selected ? style.itemSelecionado : ''}`} onClick={() => selectTask(task)}>
+      <h3 >{task.task_name}</h3>
+      <span>{task.time}</span>
     </li>
   );
 }

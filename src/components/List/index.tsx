@@ -4,18 +4,20 @@ import Item from './Item';
 import Task from '../interfaces/Task';
 
 interface ListProps {
-  tasks: Task[];
+  tasks: Task[],
+  selectTask: (task: Task) => void
 }
 
-export default function List({tasks}: ListProps) {
+export default function List({tasks, selectTask}: ListProps) {
   return (
     <aside className={style.listaTarefas}>
       <h2>Estudos do dia</h2>
       <ul>
-        {tasks.map((item, index) => (
+        {tasks.map(item => (
           <Item
-            {...item}
-            key={index}
+            selectTask={selectTask}
+            task={item}
+            key={item.id}
           />
         ))}
       </ul>
